@@ -6,14 +6,14 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-public class TaskBackendApplication extends SpringBootServletInitializer {
+public class TaskBackendApplication  extends SpringBootServletInitializer {
 
-	public static void main(String[] args) {
-		SpringApplication.run(TaskBackendApplication.class, args);
-	}
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+        return application.sources(TaskBackendApplication.class);
+    }
 
-	@Override
-	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(TaskBackendApplication.class);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(TaskBackendApplication.class, args);
+    }
 }
